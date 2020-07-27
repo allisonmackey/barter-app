@@ -1,7 +1,22 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 .container {
   padding: 30px
 }
+
+.profile-photo {
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-photo-display {
+  padding: 10px;
+}
+
+.user-info {
+ padding: 10px;
+}
+
