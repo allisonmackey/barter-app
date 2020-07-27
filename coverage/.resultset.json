@@ -642,6 +642,13 @@
           1,
           1,
           null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -649,6 +656,8 @@
         "lines": [
           1,
           null,
+          null,
+          1,
           null,
           1,
           null,
@@ -690,6 +699,80 @@
           null
         ]
       },
+      "/Users/Mackerson/Desktop/Epicodus/Capstone/barter_app/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/Mackerson/Desktop/Epicodus/Capstone/barter_app/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/Mackerson/Desktop/Epicodus/Capstone/barter_app/app/jobs/application_job.rb": {
         "lines": [
           1,
@@ -715,6 +798,7 @@
         "lines": [
           1,
           1,
+          1,
           null
         ]
       },
@@ -724,6 +808,7 @@
           null,
           1,
           2,
+          2,
           null
         ]
       },
@@ -731,12 +816,13 @@
         "lines": [
           1,
           null,
-          null,
+          1,
+          2,
           null,
           null
         ]
       }
     },
-    "timestamp": 1595827218
+    "timestamp": 1595828310
   }
 }
