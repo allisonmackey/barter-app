@@ -27,12 +27,16 @@
         <%# POST --> CARD LAYOUT  %>
       <a class="ui card" href="/posts/<%=post.id%>">
         <div class="extra content">
-          <div class="right floated author">
-            <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt
+          <div class="left floated author">
+              <%= image_tag post.user.profile_photo, class:"ui avatar image" %> 
+              <br>
+              <%= post.user.email %>
           </div>
         </div>
         <div class="content">
-          <div class="header"><%= post.title %></div>
+          <div class="header">
+            <%= post.title %>
+          </div>
           <div class="meta">
             <span class="category"><%=post.offer%></span>
           </div>
