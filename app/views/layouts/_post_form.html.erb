@@ -1,11 +1,18 @@
 <%= render 'layouts/errors', :object => @post %>
 <br>
 <%= form_for @post do |f| %>
-  <%# insert drop down for icon which will have a 'type' associated with it that users can sort by? %>
+ 
   <%# insert input type for author that will be the current_user's 'username' once that's been implemented %>
   <%# insert input type for offer 'type' that's a dropdown menu %>
   <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
-  
+
+  <%# DROP DOWN MENU FOR SERVICE TYPE %>
+  <select class="form-control" name="post[offer_type]" id="post_offer_type">
+    <option type="text" value="" name="type[nil]">Select Offer Type</option>
+    <option name="offer_type[goods]" >Goods</option>
+    <option name="offer_type[services]">Services</option>
+  </select>
+  <br>
   <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="Title">
   <br>
   <input type="text" class ="form-control" name="post[body]" id="post_body" placeholder="Enter Body">

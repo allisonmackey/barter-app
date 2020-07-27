@@ -15,6 +15,13 @@ class PostsController < ApplicationController
   def create
     @current_user = current_user
     @post = @current_user.posts.new(post_params)
+    # to determine icon type
+    if @post.offer_type == "service" 
+      @post.icon = "services.png"
+    else 
+      @post.icon = "goods.png"
+    end
+      binding.pry
     if @post.save
       redirect_to posts_path
     else
