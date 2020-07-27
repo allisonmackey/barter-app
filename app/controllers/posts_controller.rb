@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+  def home
+    #Code for listing home page information goes here
+  end
+  
   def index
     # Code for listing all posts goes here.
   end
