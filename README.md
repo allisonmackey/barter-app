@@ -32,6 +32,8 @@ TO DO LIST:
 - Create Nav Bar across all pages in 'APPLICATION.html.erb'
 
 Functionality I want to put in place: 
+- Allow user to sign up with first & last name, username, zipcode
+
 - Allow user to have 'profile' with information about the user
 - Allow user to have 'edit' page to update all profile information
 - Implement 'by zipcode' method so that users can see posts from a mile by radius 
