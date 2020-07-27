@@ -20,7 +20,7 @@
   <%= link_to "New Post!", new_post_path %>
   <%= link_to "My Posts", posts_path %>
   <br>
-
+<div class = "ui centered card">
 <%if @posts.any? %>
  <div class = 'posts'>
     <% @posts.each do |post| %>
@@ -59,3 +59,4 @@
   <p>Ready to become a user?</p>
 <% end %>
 
+</div>

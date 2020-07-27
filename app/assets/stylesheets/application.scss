@@ -2,9 +2,15 @@
 @import "bootstrap";
 @import "semantic-ui";
 
+body {
+  background-image: url('background.png');
+  padding: 25px;
+}
+
 
 .container {
-  padding: 30px
+  padding: 30px;
+  opacity: .85;
 }
 
 .profile-photo {
