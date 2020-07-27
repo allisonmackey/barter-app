@@ -1,0 +1,18 @@
+<h2> This is <%=@post%> 's view page!</h2>
+  <p><%= @post.title %></p>
+  <p><%= @post.body %></p>
+  <p><%= @post.timestamp %></p>
+
+  <%# add card for post display %>
+
+    <%if @comments.any? %>
+  <ul>
+    <% @comments.each do |comment| %>
+    <li><%= comment.author %></li>
+    <li><%= comment.body %></li>
+    <li><%= comment.timestamp %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p> There are currently no comments to display</p>
+<% end %>

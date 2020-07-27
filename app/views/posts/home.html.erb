@@ -1,0 +1,23 @@
+<% if current_user %>
+  <h1>Welcome <%= current_user.email %></h2>
+  <%# change to current.username once that's been implemented with devise %>
+
+  <h2> Create a new post!</h2>
+  <%= link_to "New Post!", new_post_path %>
+  <%= link_to "My Posts", posts_path %>
+    <%if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+    <li><%= link_to post.title, post_path(post) %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p> There are currently no posts to display</p>
+<% end %>
+
+<% else %>
+  <h1>This is a home page!</h1>
+  <p> Here's some site information that will display if the user is not logged in!</p>
+  <p>Ready to become a user?</p>
+<% end %>
+
