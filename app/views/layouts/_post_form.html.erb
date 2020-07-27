@@ -1,0 +1,19 @@
+<%= render 'layouts/errors', :object => @post %>
+<br>
+<%= form_for @post do |f| %>
+  <%# insert drop down for icon which will have a 'type' associated with it that users can sort by? %>
+  <%# insert input type for author that will be the current_user's 'username' once that's been implemented %>
+  <%# insert input type for offer 'type' that's a dropdown menu %>
+  <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
+  
+  <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="Title">
+  <br>
+  <input type="text" class ="form-control" name="post[body]" id="post_description" placeholder="Enter Description">
+  <br>
+  <input type="text" class ="form-control" name="post[offer]" id="post_offering" placeholder="Enter Offer">
+  <br>
+  <input type="zipcode" class ="form-control" name="post[zipcode]" id="post_zipcode" placeholder="Enter Zipcode">
+  <br>
+  <button type="submit" class="btn" name="commit" value="Create Post" data-disable-with="Create Post">Submit!</button>
+<% end %>
+<br>
