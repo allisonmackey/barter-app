@@ -1,5 +1,8 @@
 <% if current_user %>
   <h1>Welcome <%= current_user.email %></h2>
+  <% if current_user.profile_photo.attached? %>
+    <%= image_tag current_user.profile_photo %>
+  <%end%>
   <%# change to current.username once that's been implemented with devise %>
 
   <h2> Create a new post!</h2>
