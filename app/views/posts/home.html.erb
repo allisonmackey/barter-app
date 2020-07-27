@@ -19,15 +19,35 @@
 
   <%= link_to "New Post!", new_post_path %>
   <%= link_to "My Posts", posts_path %>
-    <%if @posts.any? %>
-  <ul>
+  <br>
+
+<%if @posts.any? %>
+ <div class = 'posts'>
     <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
+        <%# POST --> CARD LAYOUT  %>
+      <a class="ui card" href="/posts/<%=post.id%>">
+        <div class="extra content">
+          <div class="right floated author">
+            <img class="ui avatar image" src="/images/avatar/small/matt.jpg"> Matt
+          </div>
+        </div>
+        <div class="content">
+          <div class="header"><%= post.title %></div>
+          <div class="meta">
+            <span class="category"><%=post.offer%></span>
+          </div>
+          <div class="description">
+            <p></p>
+          </div>
+        </div>
+        
+      </a>
     <% end %>
-  </ul>
-  <% else %>
+   </div>
+<% else %>
   <p> There are currently no posts to display</p>
 <% end %>
+
 
 <% else %>
   <h1>This is a home page!</h1>

@@ -26,6 +26,18 @@ password: test123
 * I want to be able to message other users regarding the services/goods they're offering
 * I want to be able to set a time for us to trade goods/services
 
+TO DO LIST: 
+- Style 'User Profile' (HOME.html.erb)
+- Style 'Post' card (HOME.html.erb, SHOW.html.erb, INDEX.html.erb)
+- Create Nav Bar across all pages in 'APPLICATION.html.erb'
+
+Functionality I want to put in place: 
+- Allow user to have 'profile' with information about the user
+- Allow user to have 'edit' page to update all profile information
+- Implement 'by zipcode' method so that users can see posts from a mile by radius 
+- Implement 'friends' capability so that user can add other users and see their 'activity' 
+- Implement Messaging capability (STRETCH GOAL)
+
 
 
 ## Technologies Used
