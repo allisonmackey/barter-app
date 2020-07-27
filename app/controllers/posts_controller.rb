@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     else 
       @post.icon = "goods.png"
     end
-      binding.pry
+      # binding.pry
     if @post.save
       redirect_to posts_path
     else
