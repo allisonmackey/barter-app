@@ -3,6 +3,7 @@
   <%# change to current.username once that's been implemented with devise %>
 
   <h2> Create a new post!</h2>
+
   <%= link_to "New Post!", new_post_path %>
   <%= link_to "My Posts", posts_path %>
     <%if @posts.any? %>

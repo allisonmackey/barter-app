@@ -1,18 +1,16 @@
-<h2> This is <%=@post%> 's view page!</h2>
+<h2> This is posts view page!</h2>
+
   <p><%= @post.title %></p>
   <p><%= @post.body %></p>
-  <p><%= @post.timestamp %></p>
 
+  <%= link_to "Add Comment", new_post_comment_path(@post)%>
   <%# add card for post display %>
 
-    <%if @comments.any? %>
-  <ul>
-    <% @comments.each do |comment| %>
-    <li><%= comment.author %></li>
-    <li><%= comment.body %></li>
-    <li><%= comment.timestamp %></li>
+    <%if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+    <%= comment.author %>
+    <%= comment.body %>
     <% end %>
-  </ul>
   <% else %>
   <p> There are currently no comments to display</p>
 <% end %>

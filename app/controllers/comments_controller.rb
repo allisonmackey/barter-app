@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController 
 
   def index 
-    render :home
+    redirect_to home_path
   end
 
   def new
@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   def create
     # will need to refactor to @post.comments.new(comment_params)
     @post = Post.find(params[:post_id])
-    @comment = Comment.new(comment_params)
+    @comment = @post.comments.new(comment_params)
     if @comment.save
       redirect_to post_path(@post)
     else
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:post_id)]
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
       redirect_to post_path(@comment.post)
