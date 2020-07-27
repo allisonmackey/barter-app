@@ -1,35 +1,51 @@
-class PostsController < ApplicationController
-
+class PostsController < ApplicationController 
   def home
-    #Code for listing home page information goes here
+    @posts = Post.all
   end
-  
-  def index
-    # Code for listing all posts goes here.
+
+  def index 
+    @user = current_user
+    @posts = @user.posts
   end
 
   def new
-    # Code for new post form goes here.
+    @post= Post.new
   end
 
   def create
-    # Code for creating a new post goes here.
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def edit
-    # Code for edit post form goes here.
+    @post = Post.find(params[:id])
   end
 
   def show
-    # Code for showing a single post goes here.
+   @post = Post.find(params[:id])
   end
 
   def update
-    # Code for updating an post goes here.
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_path
+    else 
+      render :edit
+    end
   end
 
   def destroy
-    # Code for deleting an post goes here.
+    @post = Post.find(params[:id])
+    @post.destroy
+    render :index
   end
 
+  private 
+    def post_params
+      params.require(:post).permit(:title, :body, :author, :icon, :open, :offer, :offer_type, :zipcode)
+    end
 end
