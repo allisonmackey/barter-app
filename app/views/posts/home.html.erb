@@ -83,27 +83,27 @@
             <% end %>
           </div>
         <% end %>
-    </div>
-    <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
-      <%# <form class="ui reply form">
-        <div class="field">
-          <textarea></textarea>
-        </div>
-        <div class="ui button">
-          <i class="icon edit"></i> Add Reply
-        </div>
-      </form> %>
-      
-    <script>
-      $(".ui.comments").hide()
-      $(".comment-count").click(function(){
-        $("#<%=post.id%>").slideToggle();
-      });
-      // $(".comment-count").click(function(){
-      //   $(".ui.comments").hide();
-      // });
-    </script>
-  <% end %>
+      </div>
+      <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
+        <%# <form class="ui reply form">
+          <div class="field">
+            <textarea></textarea>
+          </div>
+          <div class="ui button">
+            <i class="icon edit"></i> Add Reply
+          </div>
+        </form> %>
+
+      <script>
+        $(".ui.comments").hide()
+        $(".comment-count").click(function(){
+          $("#<%=post.id%>").slideToggle();
+        });
+        // $(".comment-count").click(function(){
+        //   $(".ui.comments").hide();
+        // });
+      </script>
+    <%end%>
   <% else %>
     <p> There are currently no posts to display</p>
   <% end %>

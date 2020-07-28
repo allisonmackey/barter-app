@@ -37,7 +37,7 @@ Functionality I want to put in place:
 - Allow user to have 'profile' with information about the user
 - Allow user to have 'edit' page to update all profile information
 - Implement 'by zipcode' method so that users can see posts from a mile by radius 
-- Implement 'friends' capability so that user can add other users and see their 'activity' 
+- Implement 'friends' capability so that user can add other users and see their 'activity' (STRETCH GOAL)
 - Implement Messaging capability (STRETCH GOAL)
 
 

@@ -1,9 +1,13 @@
 class PostsController < ApplicationController 
   def home
-    @user = current_user.id
+    if current_user
+      @user = current_user.id
+    end
     @posts = Post.all.where("user_id != #{@user}")
-    binding.pry
+    # binding.pry
   end
+
+  # Accessing Active Storage Records for other users to display profile photos in comments : @image = ActiveStorage::Attachment.where()"@record.user_id = 6" --> allows you to get assignment from active storage... 
 
   def index 
     @user = current_user
