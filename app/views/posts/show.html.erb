@@ -42,12 +42,8 @@
     <%if @post.comments.any? %>
       
         <% @post.comments.each do |comment| %>
-        <%@user = User.where("email = #{comment.author}") %>
-         <%= image_tag @user.profile_photo, class:"ui avatar image" %> 
           <div class="comment">
-            <a class="avatar">
-              <img src="<%= %>">
-            </a>
+            
             <div class="content">
               <a class="author"><%= comment.author %></a>
             </div>
@@ -62,13 +58,8 @@
               <a class="reply">Reply</a>
             </div> %>
           </div>
-
-        
         <% end %>
        </div>
-
-
-
     <% else %>
       <p> There are currently no comments to display</p>
     <% end %>
