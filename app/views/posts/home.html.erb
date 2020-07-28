@@ -61,48 +61,49 @@
 
         <%# COMMENT'S DISPLAY  %>
         <%if post.comments.any? %>
-        <div class="ui comments">
-          <h3 class="ui dividing header">Comments</h3>
-          
-          <% post.comments.each do |comment| %>
-            <div class="comment">
-              <div class="content">
-                <a class="author"><%= comment.author %></a>
+          <div class="ui comments" id="<%=post.id%>">
+            <h3 class="ui dividing header">Comments</h3>
+            
+            <% post.comments.each do |comment| %>
+              <div class="comment">
+                <div class="content">
+                  <a class="author"><%= comment.author %></a>
+                </div>
+                <div class="metadata">
+                  <span class="date"><%=comment.created_at%></span>
+                </div>
+                <div class="text">
+                  <%= comment.body%>
+                </div>
+                <%# REPLY ISN'T FUNCTIONAL ATM %>
+                <%# <div class="actions">
+                  <a class="reply">Reply</a>
+                </div> %>
               </div>
-              <div class="metadata">
-                <span class="date"><%=comment.created_at%></span>
-              </div>
-              <div class="text">
-                <%= comment.body%>
-              </div>
-              <%# REPLY ISN'T FUNCTIONAL ATM %>
-              <%# <div class="actions">
-                <a class="reply">Reply</a>
-              </div> %>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+    <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
+      <%# <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
         </div>
-      <% else %>
-        <p> There are currently no comments to display</p>
-      <% end %>
-      </div>
+        <div class="ui button">
+          <i class="icon edit"></i> Add Reply
+        </div>
+      </form> %>
       
-        <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
-          <%# <form class="ui reply form">
-            <div class="field">
-              <textarea></textarea>
-            </div>
-            <div class="ui button">
-              <i class="icon edit"></i> Add Reply
-            </div>
-          </form> %>
-      <script>
-        $(".ui.comments").hide()
-        $(".comment-count").click(function(){
-          $(".ui.comments").slideToggle();
-        });
-      </script>
-    <% end %>
+    <script>
+      $(".ui.comments").hide()
+      $(".comment-count").click(function(){
+        $("#<%=post.id%>").slideToggle();
+      });
+      // $(".comment-count").click(function(){
+      //   $(".ui.comments").hide();
+      // });
+    </script>
+  <% end %>
   <% else %>
     <p> There are currently no posts to display</p>
   <% end %>

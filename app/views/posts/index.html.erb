@@ -1,22 +1,93 @@
+<%# TO DO LIST %>
+<%# - add 'complete' button which will mark the status as 'closed' %>
+<%# - add 'delete/edit' path so that the user can edit/delete their own posts %>
+<%#  %>
+
+
 <% if current_user %>
   <h1>Welcome <%= current_user.email %></h1>
   <%# change to current_user.username once implemented %>
   <h2>This is your user homepage</h2>
+<% end %>
 
-  <h2> Create a new post!</h2>
-  <%= link_to "New Post!", new_post_path %>
-    <%if @posts.any? %>
-  <ul>
+<%# POST --> CARD LAYOUT  %>
+  <%if @posts.any? %>
     <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-    <% end %>
-  </ul>
-  <% else %>
-  <p> There are currently no posts to display</p>
-<% end %>
+      <div class="ui card">
+        <div class="extra content">
+          <div class="left floated author">
+            <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
+            <br>
+            user: <%= post.user.email %>
+          </div>
+        </div>
+        <div class="content">
+          <div class="header">
+            <%= post.title %>
+          </div>
+          <div class="meta">
+            <span class="category"><%=post.offer%></span>
+          </div>
+          <div class="description">
+            <p></p>
+          </div>
+        </div>
+        <div class = "comment-bar">
+          <a class="item" href="/posts/<%=post.id%>/comments/new" value="<%= new_post_comment_path(post) %>"> 
+            <button class="ui button">
+              <i class="comment outline icon"></i>
+              Add Comment 
+            </button>
+          </a> 
 
-<% else %>
-  <h1>This is a home page!</h1>
-  <p> Here's some site information that will display if the user is not logged in!</p>
-  <p>Ready to become a user?</p>
-<% end %>
+          <a><span class = "comment-count"><%= post.comments.count%> Comments</span></a>
+        </div>
+
+        <%# COMMENT'S DISPLAY  %>
+        <%if post.comments.any? %>
+          <div class="ui comments" id="<%=post.id%>">
+            <h3 class="ui dividing header">Comments</h3>
+            
+            <% post.comments.each do |comment| %>
+              <div class="comment">
+                <div class="content">
+                  <a class="author"><%= comment.author %></a>
+                </div>
+                <div class="metadata">
+                  <span class="date"><%=comment.created_at%></span>
+                </div>
+                <div class="text">
+                  <%= comment.body%>
+                </div>
+                <%# REPLY ISN'T FUNCTIONAL ATM %>
+                <%# <div class="actions">
+                  <a class="reply">Reply</a>
+                </div> %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+    <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
+      <%# <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
+        </div>
+        <div class="ui button">
+          <i class="icon edit"></i> Add Reply
+        </div>
+      </form> %>
+      
+    <script>
+      $(".ui.comments").hide()
+      $(".comment-count").click(function(){
+        $("#<%=post.id%>").slideToggle();
+      });
+      // $(".comment-count").click(function(){
+      //   $(".ui.comments").hide();
+      // });
+    </script>
+  <% end %>
+  <% else %>
+    <p> There are currently no posts to display</p>
+  <% end %>

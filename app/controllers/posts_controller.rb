@@ -1,6 +1,8 @@
 class PostsController < ApplicationController 
   def home
-    @posts = Post.all
+    @user = current_user.id
+    @posts = Post.all.where("user_id != #{@user}")
+    binding.pry
   end
 
   def index 

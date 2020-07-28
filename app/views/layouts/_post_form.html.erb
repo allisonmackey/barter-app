@@ -1,11 +1,9 @@
 <%= render 'layouts/errors', :object => @post %>
 <br>
 <%= form_for @post do |f| %>
- 
   <%# insert input type for author that will be the current_user's 'username' once that's been implemented %>
   <%# insert input type for offer 'type' that's a dropdown menu %>
   <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
-
   <%# DROP DOWN MENU FOR SERVICE TYPE %>
   <select class="form-control" name="post[offer_type]" id="post_offer_type">
     <option type="text" value="" name="type[nil]">Select Offer Type</option>
@@ -21,6 +19,6 @@
   <br>
   <input type="zipcode" class ="form-control" name="post[zipcode]" id="post_zipcode" placeholder="Enter Zipcode">
   <br>
-  <button type="submit" class="btn btn-dark" name="commit" value="Create Post" data-disable-with="Create Post">Submit!</button>
+  <button type="submit" class="btn" name="commit" value="Create Post" data-disable-with="Create Post">Submit!</button>
 <% end %>
 <br>
