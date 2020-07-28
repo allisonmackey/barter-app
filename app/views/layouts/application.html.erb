@@ -39,7 +39,7 @@
           <%# RIGHT SIDE MENU %>
         <div class="right menu">
           <div class="ui item">
-              <p><%= current_user.email %></p>
+              <p><%= current_user.username %></p>
           </div>
           <a class="ui item" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Log Out</a>
         </div>

@@ -3,8 +3,19 @@
 @import "semantic-ui";
 // @import "overrides";
 
+
+// SITE COLORS
+// Teal/Blue: #588b8b 
+// Pink: #ffd5c2
+// Orange: #f18b34
+// Red: #c8553d
+// Translucent Red: #c8543dd1
 a {
   color: white;
+}
+
+a:hover {
+  color: #588b8b;
 }
 
 body {
@@ -18,6 +29,12 @@ body {
 
 h2.white {
   color: white;
+  font-weight: 300;
+}
+
+.white {
+  color: white;
+  font-weight: 100;
 }
 
 //  CUSTOM CLASSES 
@@ -33,6 +50,7 @@ h2.white {
 
 .container {
   padding: 50px;
+
 }
 
 .custom-form {
@@ -60,11 +78,28 @@ h2.white {
   width: 30vw;
 }
 
+#home-page {
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 10vh;
+  background-color:#c8543dd1;
+  border-radius: 8px;
+  height: 70vh;
+  
+}
+
 .horizontal-bar {
   padding: 10px;
   background-color:#d1dada ;
   border-radius: 8px;
   width: 70vw;
+}
+
+.logo-homepage {
+  width: 25%;
+  height: auto;
+  float: right;
 }
 
 .profile-photo {
@@ -92,10 +127,7 @@ h2.white {
 }
 
 
-
 // SEMANTIC UI CUSTOMIZATIONS 
-
-
 .i {
   margin-left: 3px;
 }

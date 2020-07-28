@@ -1,9 +1,7 @@
-
 <%# USER INFORMATION DISPLAYED AT TOP OF PAGE %>
-<%# change to current.username once that's been implemented with devise %>
 <% if current_user %>
   <div class = "user-info">
-    <h1>Welcome <%= current_user.email %></h1>
+    <h1>Welcome <%= current_user.username %></h1>
     <% if current_user.profile_photo.attached? %>
       <div class = "profile-photo-display">
         <%= image_tag current_user.profile_photo, class:"profile-photo" %>
@@ -34,7 +32,7 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.email %>
+            user: <%= post.user.username %>
           </div>
         </div>
         <div class="content">
@@ -108,11 +106,25 @@
     <p> There are currently no posts to display</p>
   <% end %>
 <% else %>
-
-
-
   <%# IF USER ISN'T LOGGED IN HOME PAGE/LANDING%>
-  <h1>This is a home page!</h1>
-  <p> Here's some site information that will display if the user is not logged in!</p>
-  <p>Ready to become a user?</p>
+  <div id = "home-page" class="white">
+    <%= image_tag "BarterUp.png", class: "logo-homepage"%>
+   
+    <h2 class="white">WELCOME</h2> 
+    <hr style="margin-right: 300px;">
+
+    <h4>ABOUT US</h4>
+    <p>BarterUp was started with one goal in mind, for the people, by the people.</p>
+    <p>Everyone has something to offer, why not trade it? </p>
+
+    <h4>WHAT WE'RE ABOUT</h4>
+    <p>We want people to aquire what they desire, without the need for money!</p>
+
+    <h4>QUESTIONS?</h4>
+    <p>Send us an email! <a href="mailto:BarterUpApp@gmail.com?&subject=Question!&body=Hi Barter Up People!" target="_blank">Email Us!</a>
+</p>
+
+    <p> Ready to become a user? <a class="white" href="/users/sign_up"> Sign Up!</a>
+
+  </div>
 <% end %>
