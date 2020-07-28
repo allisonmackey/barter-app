@@ -1,16 +1,23 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "semantic-ui";
+// @import "overrides";
 
 body {
   background-image: url('background.png');
-  padding: 25px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: flex;
+  background-position: center;
 }
 
+.pusher {
+  background-color: transparent;
+}
 
 .container {
-  padding: 30px;
-  opacity: .85;
+  padding: 50px;
+
 }
 
 .profile-photo {
@@ -22,6 +29,7 @@ body {
 
 .profile-photo-display {
   padding: 10px;
+  opacity: .86;
 }
 
 .user-info {
@@ -30,4 +38,8 @@ body {
 
 input {
   margin-top: 5px;
+}
+
+.ui-card{
+
 }

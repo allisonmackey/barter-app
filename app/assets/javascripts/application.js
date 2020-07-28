@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require semantic-ui
+//= require custom
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

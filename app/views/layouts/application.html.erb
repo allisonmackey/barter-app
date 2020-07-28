@@ -9,38 +9,61 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class = "container">
-      <%# NAVIGATION BAR %>
-      <div class="ui secondary  menu">
-        <% if current_user %>
-          <a class="item" href="/home" value="<%= home_path%>">
-            Home
-          </a>
-          <a class="item" href="/posts" value="<%= posts_path%>">
-            My Posts
-          </a>
-        <%# RIGHT SIDE MENU %>
-        <div class="right menu">
-          <div class="ui item">
-              <a class="nav-item nav-link" href=""><%= current_user.email %></a>
-          </div>
-          <a class="ui item" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Log Out</a>
+    
+      <%# CONTENT OF TOGGLED SIDEBAR %>
+      <div  class="ui sidebar inverted vertical menu">
+        <a href="#"class="item">
+          User Settings
+        </a>
+        <a href="#"class="item">
+          
+        </a>
+        <a href="#"class="item">
+          
+        </a>
+      </div>
+
+      <div class = "ui basic icon top fixed menu">
+        <div id="side-bar" class="item">
+          <i class= "bars icon"></i>
         </div>
-             
+          <%# NAVIGATION BAR %>
+          <% if current_user %>
+            <a class="item" href="/home" value="<%= home_path%>">
+              Home
+            </a>
+            <a class="item" href="/posts" value="<%= posts_path%>">
+              My Posts
+            </a>
+            <%# RIGHT SIDE MENU %>
+          <div class="right menu">
+            <div class="ui item">
+                <a class="nav-item nav-link" href=""><%= current_user.email %></a>
+            </div>
+            <a class="ui item" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Log Out</a>
+          </div>
           <% else  %>
             <a class="item" href="/users/sign_up"> Sign Up </a>
-            <a class="" href="/users/sign_in">Sign In </a>
+            <a class="item" href="/users/sign_in">Sign In </a>
           <% end %>
+          
       </div>
-     
-
-    <%# BODY %>
-      <%= yield %>
+      
+    <div class = "container">
+      <!-- Site content !-->
+          <%# BODY %>
+      <div class="pusher">
+      
+          <%= yield %>
+      </div>
     </div>
+     <script>
+     
+      $('#side-bar').click(function() {
+        $('.ui.sidebar').sidebar('toggle');
+      })
 
-   
-    
-    
-   
+      
+    </script>
   </body>
 </html>
