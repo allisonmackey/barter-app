@@ -34,16 +34,36 @@
 
 </div>
 
-
+<% %>
 
 <%# COMMENT DISPLAY %>
   <div class="ui comments">
     <h3 class="ui dividing header">Comments</h3>
     <%if @post.comments.any? %>
-      <div class="comment">
+      
         <% @post.comments.each do |comment| %>
-          <%= comment.author %>
-          <%= comment.body %>
+        <%@user = User.where("email = #{comment.author}") %>
+         <%= image_tag @user.profile_photo, class:"ui avatar image" %> 
+          <div class="comment">
+            <a class="avatar">
+              <img src="<%= %>">
+            </a>
+            <div class="content">
+              <a class="author"><%= comment.author %></a>
+            </div>
+            <div class="metadata">
+              <span class="date"><%=comment.created_at%></span>
+            </div>
+            <div class="text">
+              <%= comment.body%>
+            </div>
+            <%# REPLY ISN'T FUNCTIONAL ATM %>
+            <%# <div class="actions">
+              <a class="reply">Reply</a>
+            </div> %>
+          </div>
+
+        
         <% end %>
        </div>
 
@@ -54,22 +74,8 @@
     <% end %>
     
    
-      <a class="avatar">
-        <img src="/images/avatar/small/matt.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Matt</a>
-        <div class="metadata">
-          <span class="date">Today at 5:42PM</span>
-        </div>
-        <div class="text">
-          How artistic!
-        </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
-        </div>
-      </div>
-
+    
+   
 
     <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
       <%# <form class="ui reply form">

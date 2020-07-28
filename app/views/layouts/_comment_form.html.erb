@@ -6,6 +6,8 @@
   <%# insert input type for offer 'type' that's a dropdown menu %>
   <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
   <br>
+  <input type="hidden" name="comment[author]" id="comment_author" value="<%=current_user.email%>">
+  <br>
   <input type="text" class ="form-control" name="comment[body]" id="comment_body" placeholder="Enter Comment">
   <br>
   <input type="text" class ="form-control" name="comment[offer]" id="comment_offering" placeholder="Enter Offer">
