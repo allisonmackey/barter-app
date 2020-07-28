@@ -20,10 +20,12 @@ input {
 .comment-count {
   float: right;
 }
-.comments {
+
+.ui.comments {
   background-color: #ffffff96;
   border-radius: 8px;
   padding: 25px;
+  width: 70vw;
 }
 .container {
   padding: 50px;
@@ -53,7 +55,6 @@ input {
   padding: 10px;
  }
 
-
 // SEMANTIC UI CUSTOMIZATIONS 
 
 body > div.container > div > div.comments > div {
@@ -68,7 +69,11 @@ body > div.container > div > div.comments > div {
   height: flex;
 }
 
+.ui.comments{
+  width: 70vw;
+}
+
+
 .ui.button {
   background-color: white;
-  
 }
