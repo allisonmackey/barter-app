@@ -3,7 +3,7 @@
 <%# change to current.username once that's been implemented with devise %>
 <% if current_user %>
   <div class = "user-info">
-    <h1>Welcome <%= current_user.email %></h2>
+    <h1>Welcome <%= current_user.email %></h1>
     <% if current_user.profile_photo.attached? %>
       <div class = "profile-photo-display">
         <%= image_tag current_user.profile_photo, class:"profile-photo" %>

@@ -3,6 +3,10 @@
 @import "semantic-ui";
 // @import "overrides";
 
+a {
+  color: white;
+}
+
 body {
   background-image: url('background.png');
   background-attachment: fixed;
@@ -15,8 +19,6 @@ body {
 input {
   margin-top: 5px;
 }
-
-
 
 //  CUSTOM CLASSES 
 .comment-bar {
@@ -32,6 +34,18 @@ input {
 
 .container {
   padding: 50px;
+}
+
+.devise-user-paths {
+  margin: auto;
+  padding: 40px;
+  border-radius: 8px;
+  background-color: #588b8b ;
+  width: 50vw;
+}
+
+h2.devise-paths {
+  color: white;
 }
 
 .horizontal-bar {
@@ -53,15 +67,29 @@ input {
   opacity: .86;
 }
 
+
+.user-action-button {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 8px; 
+  border: 0px;
+  border-radius: 5px;
+}
 .user-info {
   padding: 10px;
- }
+}
+
+
 
 // SEMANTIC UI CUSTOMIZATIONS 
 
 
 .i {
   margin-left: 3px;
+}
+
+.ui.button {
+  background-color: white;
 }
 
 .ui.card {
@@ -76,7 +104,5 @@ input {
   padding: 25px;
  
 }
-.ui.button {
-  background-color: white;
-}
+
 
