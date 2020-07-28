@@ -16,17 +16,20 @@ input {
   margin-top: 5px;
 }
 
+
+
 //  CUSTOM CLASSES 
+.comment-bar {
+  padding: 10px;
+  background-color:#d1dada ;
+  width: 70vw;
+}
+
 .comment-count {
   float: right;
 }
 
-.ui.comments {
-  background-color: #ffffff96;
-  border-radius: 8px;
-  padding: 25px;
-  width: 70vw;
-}
+
 .container {
   padding: 50px;
 }
@@ -36,7 +39,6 @@ input {
   background-color:#d1dada ;
   border-radius: 8px;
   width: 70vw;
-
 }
 
 .profile-photo {
@@ -57,9 +59,7 @@ input {
 
 // SEMANTIC UI CUSTOMIZATIONS 
 
-body > div.container > div > div.comments > div {
-  background-color: white;
-}
+
 .i {
   margin-left: 3px;
 }
@@ -69,11 +69,14 @@ body > div.container > div > div.comments > div {
   height: flex;
 }
 
-.ui.comments{
+.ui.comments {
   width: 70vw;
+  background-color: #ffffff96;
+  border-radius: 8px;
+  padding: 25px;
+ 
 }
-
-
 .ui.button {
   background-color: white;
 }
+

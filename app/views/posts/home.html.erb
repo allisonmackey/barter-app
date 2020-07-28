@@ -43,16 +43,27 @@
           </div>
           <div class="meta">
             <span class="category"><%=post.offer%></span>
-            <span class = "comment-count"><%= post.comments.count%> Comments</span>
           </div>
           <div class="description">
             <p></p>
           </div>
         </div>
-      </div>
-      <%if post.comments.any? %>
+        <div class = "comment-bar">
+          <a class="item" href="/posts/<%=post.id%>/comments/new" value="<%= new_post_comment_path(post) %>"> 
+            <button class="ui button">
+              <i class="comment outline icon"></i>
+              Add Comment 
+            </button>
+          </a> 
+
+          <a><span class = "comment-count"><%= post.comments.count%> Comments</span></a>
+        </div>
+
+        <%# COMMENT'S DISPLAY  %>
+        <%if post.comments.any? %>
         <div class="ui comments">
           <h3 class="ui dividing header">Comments</h3>
+          
           <% post.comments.each do |comment| %>
             <div class="comment">
               <div class="content">
@@ -74,6 +85,8 @@
       <% else %>
         <p> There are currently no comments to display</p>
       <% end %>
+      </div>
+      
         <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
           <%# <form class="ui reply form">
             <div class="field">
@@ -97,7 +110,7 @@
 
 
 
-  <%# IF USER ISN'T LOGGED IN HOME PAGE/LANDING PAGE%>
+  <%# IF USER ISN'T LOGGED IN HOME PAGE/LANDING%>
   <h1>This is a home page!</h1>
   <p> Here's some site information that will display if the user is not logged in!</p>
   <p>Ready to become a user?</p>
