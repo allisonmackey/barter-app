@@ -9,14 +9,30 @@ body {
   background-repeat: no-repeat;
   background-size: flex;
   background-position: center;
+  zoom: 90%;
 }
 
-.pusher {
-  background-color: transparent;
+input {
+  margin-top: 5px;
 }
 
+//  CUSTOM CLASSES 
+.comment-count {
+  float: right;
+}
+.comments {
+  background-color: #ffffff96;
+  border-radius: 8px;
+  padding: 25px;
+}
 .container {
   padding: 50px;
+}
+
+.horizontal-bar {
+  padding: 10px;
+  background-color:#d1dada ;
+  border-radius: 8px;
 
 }
 
@@ -33,13 +49,25 @@ body {
 }
 
 .user-info {
- padding: 10px;
+  padding: 10px;
+ }
+
+
+// SEMANTIC UI CUSTOMIZATIONS 
+
+body > div.container > div > div.comments > div {
+  background-color: white;
+}
+.i {
+  margin-left: 3px;
 }
 
-input {
-  margin-top: 5px;
+.ui.card {
+  width: 700px; 
+  height: flex;
 }
 
-.ui-card{
-
+.ui.button {
+  background-color: white;
+  
 }

@@ -1,16 +1,91 @@
-<h2> This is posts view page!</h2>
 
-  <p><%= @post.title %></p>
-  <p><%= @post.body %></p>
+<%# POST DISPLAY %>
+<%# ICON FOR EDIT - ONLY VISIBLE IF CURRENT USER IS SAME AS POST USER %>
+<%# <i class="edit outline icon"></i> %>
+<div class="ui card">
+  <div class="extra content">
+    <div class="left floated author">
+      <%= image_tag @post.user.profile_photo, class:"ui avatar image max-width" %>  <%= @post.user.email %>
+    </div>
+  </div>
+  <div class="content">
+    <div class="header">
+      <%= @post.title %>
+    </div>
+    <div class="meta">
+      <span class="category">Offering: <%=@post.offer%></span>
+    </div>
+    <div class="description">
+      <p><%= @post.body %></p>
+    </div>
+  </div>
+  
+  <div class = "horizontal-bar">
+    <a class="item" href="/posts/<%=@post.id%>/comments/new" value="<%= new_post_comment_path(@post) %>"> 
+      <button class="ui button">
+        <i class="comment outline icon"></i>
+        Add Comment 
+      </button>
+      
+    </a> 
+    <span class = "comment-count"><%= @post.comments.count%> Comments</span>
+  </div>
 
-  <%= link_to "Add Comment", new_post_comment_path(@post)%>
-  <%# add card for post display %>
 
+</div>
+
+
+
+<%# COMMENT DISPLAY %>
+  <div class="ui comments">
+    <h3 class="ui dividing header">Comments</h3>
     <%if @post.comments.any? %>
-    <% @post.comments.each do |comment| %>
-    <%= comment.author %>
-    <%= comment.body %>
+      <div class="comment">
+        <% @post.comments.each do |comment| %>
+          <%= comment.author %>
+          <%= comment.body %>
+        <% end %>
+       </div>
+
+
+
+    <% else %>
+      <p> There are currently no comments to display</p>
     <% end %>
-  <% else %>
-  <p> There are currently no comments to display</p>
-<% end %>
+    
+   
+      <a class="avatar">
+        <img src="/images/avatar/small/matt.jpg">
+      </a>
+      <div class="content">
+        <a class="author">Matt</a>
+        <div class="metadata">
+          <span class="date">Today at 5:42PM</span>
+        </div>
+        <div class="text">
+          How artistic!
+        </div>
+        <div class="actions">
+          <a class="reply">Reply</a>
+        </div>
+      </div>
+
+
+    <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
+      <%# <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
+        </div>
+        <div class="ui button">
+          <i class="icon edit"></i> Add Reply
+        </div>
+      </form> %>
+  </div>
+
+
+<script>
+  $(".ui.comments").hide()
+  $(".comment-count").click(function(){
+    $(".ui.comments").slideToggle();
+  });
+</script>
