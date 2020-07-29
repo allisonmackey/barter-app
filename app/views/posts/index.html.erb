@@ -30,7 +30,7 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.email %> || <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>">EDIT POST</a> || <a href="/posts/<%=post.id%>" data-method="delete" value="<%= post_path(post)%>"> DELETE POST </a>
+            user: <%= post.user.email %> || <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>">EDIT POST</a> || <a href="/posts/<%=post.id%>" data-method="delete" value="<%= posts_path%>"> DELETE POST </a>
           </div>
         </div>
         <div class="content">
