@@ -13,9 +13,7 @@ View this project on Heroku [here]()
 For detailed instructions for installation click [here](INSTALL.md).
 <br>
 You can log into the website using the following credentials to browse the application's functionality. 
-
-email: test123@test.com
-password: test123
+<!-- ENTER USERNAME & PASSWORD HERE AFTER CORRECTLY SEEDING -->
 
 ## Specs 
 
@@ -27,31 +25,23 @@ password: test123
 * I want to be able to set a time for us to trade goods/services
 
 TO DO LIST: 
-- Style 'User Profile' (HOME.html.erb)
-- Style 'Post' card (HOME.html.erb, SHOW.html.erb, INDEX.html.erb)
-- Create Nav Bar across all pages in 'APPLICATION.html.erb'
-
 Functionality I want to put in place: 
-- Allow user to sign up with first & last name, username, zipcode
-
+- Allow user to sign up with first & last name
 - Allow user to have 'profile' with information about the user
-- Allow user to have 'edit' page to update all profile information
 - Implement 'by zipcode' method so that users can see posts from a mile by radius 
 - Implement 'friends' capability so that user can add other users and see their 'activity' (STRETCH GOAL)
 - Implement Messaging capability (STRETCH GOAL)
 
-
-
 ## Technologies Used
-* _Ruby_
-* _Rails_
 * _ActiveRecord_
-* _Faker_
-* _Rspec_
-* _Pry_
-* _Postgres_
-* _Markdown_
+* _ActiveStorage_
+* _Devise_
 * _git & gitHub_
+* _Markdown_
+* _Postgres_
+* _Pry_
+* _Rspec_
+* _Ruby on Rails_
 
 ## Known Bugs
 

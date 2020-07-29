@@ -46,6 +46,11 @@
         <% else  %>
           <a class="item" href="/users/sign_up"> Sign Up </a>
           <a class="item" href="/users/sign_in">Sign In </a>
+          <div class="right menu">
+            <a class="item" href="/home" value="<%= home_path%>">
+              Home
+            </a>
+          </div>
         <% end %>
         
     </div>
@@ -55,15 +60,17 @@
     <div class = "container">
   
       <div class="pusher">
-      
           <%= yield %>
       </div>
     </div>
+    
     <script>
      
       $('#side-bar').click(function() {
         $('.ui.sidebar').sidebar('toggle');
       })
     </script>
+
+    <footer>BarterUp, 2020 © <a href="https://www.linkedin.com/in/allisonmariemackey/">Allison Mackey</a>
   </body>
 </html>

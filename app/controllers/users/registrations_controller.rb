@@ -16,6 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if params[:user][:profile_photo]
       current_user.profile_photo.attach(params[:user][:profile_photo])
     end
+    current_user
+    binding.pry
     
   end
 

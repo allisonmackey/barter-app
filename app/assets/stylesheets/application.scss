@@ -3,7 +3,6 @@
 @import "semantic-ui";
 // @import "overrides";
 
-
 // SITE COLORS
 // Teal/Blue: #588b8b 
 // Pink: #ffd5c2
@@ -24,7 +23,18 @@ body {
   background-repeat: no-repeat;
   background-size: flex;
   background-position: center;
-  // zoom: 150%;
+  zoom: 100%;
+}
+
+footer {
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-weight:300;
+  color: white
 }
 
 h2.white {
@@ -32,9 +42,15 @@ h2.white {
   font-weight: 300;
 }
 
-.white {
-  color: white;
-  font-weight: 100;
+// CUSTOM ID'S
+#home-page {
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 10vh;
+  background-color:#c8543dd1;
+  border-radius: 8px;
+  height: 70vh;
 }
 
 //  CUSTOM CLASSES 
@@ -52,7 +68,6 @@ h2.white {
   padding: 50px;
 
 }
-
 .custom-form {
   margin-top: 25vh;
   margin-left: auto;
@@ -64,7 +79,7 @@ h2.white {
 }
 
 .devise-user-paths {
-  margin-top: 16vh;
+  margin-top: 10vh;
   margin-right: auto;
   margin-left: auto;
   padding: 40px;
@@ -77,17 +92,6 @@ h2.white {
 .form-control {
   margin-top: 5px;
   width: 30vw;
-}
-
-#home-page {
-  padding: 50px;
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 10vh;
-  background-color:#c8543dd1;
-  border-radius: 8px;
-  height: 70vh;
-  
 }
 
 .horizontal-bar {
@@ -115,7 +119,6 @@ h2.white {
   opacity: .86;
 }
 
-
 .user-action-button {
   color: grey;
   margin-top: 15px;
@@ -124,10 +127,16 @@ h2.white {
   border: 0px;
   border-radius: 5px;
 }
+
 .user-info {
   padding: 10px;
 }
 
+
+.white {
+  color: white;
+  font-weight: 100;
+}
 
 // SEMANTIC UI CUSTOMIZATIONS 
 .i {
