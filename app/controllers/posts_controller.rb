@@ -3,7 +3,11 @@ class PostsController < ApplicationController
     if current_user
       @user = current_user.id
     end
-    @posts = Post.all.where("user_id != #{@user}")
+    if params[:search_term]
+      @posts = Post.search_posts(params[:search_term])
+    else 
+      @posts = Post.all.where("user_id != #{@user}")
+    end
     # binding.pry
   end
 
