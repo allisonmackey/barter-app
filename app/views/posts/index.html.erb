@@ -30,7 +30,8 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.username %>
+            <span style="margin-left: 10px">user: <%= post.user.username %></span>
+            <span class="f-right">posted <%= time_ago_in_words(post.created_at)%> ago</span>
           </div>
           <div class="ui icon button f-right" data-tooltip="Delete Post" data-variation="mini">
             <a href="/posts/<%=post.id%>" onclick="confirm('Are you sure you want to delete this post?')" data-method="delete" value="<%= posts_path%>"><i class="trash alternate outline icon"></i></a>
@@ -69,13 +70,7 @@
             <% post.comments.each do |comment| %>
               <div class="comment">
                 <div class="content">
-                  <a class="author"><%= comment.author %></a>
-                </div>
-                <div class="metadata">
-                  <span class="date"><%=comment.created_at%></span>
-                </div>
-                <div class="text">
-                  <%= comment.body%>
+                  <a class="author"><%= comment.author %></a><span class="text" style="margin-left: 10px"> <%= comment.body%></span> <span class="metadata f-right">posted <%= time_ago_in_words(comment.created_at)%> ago</span>
                 </div>
                 <%# REPLY ISN'T FUNCTIONAL ATM %>
                 <%# <div class="actions">

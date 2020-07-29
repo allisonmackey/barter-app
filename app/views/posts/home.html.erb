@@ -16,25 +16,26 @@
   <%# HORIZONTAL BAR UNDER USER INFORMATION %>
   <%# ADD DROP DOWN FOR SORTING POSTS BY 'TYPE' %>
   <div class = "horizontal-bar">
+    <form id="desc_form" class="ui action input" type="hidden">
+      <input type="hidden" name="sort" id="sort" value="decending">
+    </form>
+    <button type = "submit" class="ui icon button" formtarget="desc_form">
+        <i class="angle double down icon"></i>
+    </button>
+
+    <form id="asc_form" class = "ui action input" type="hidden">
+      <input type="hidden" name="sort" id="sort" value="acending">
+    </form>
+    <button type = "submit" class="ui icon button" formtarget="asc_form">
+        <i class="angle double up icon"></i>
+    </button>
+
     <a class="item" href="/posts/new" value="<%= new_post_path%>"> 
       <button class="ui button">
         <i class="plus square outline icon"></i>
          New Post 
       </button>
     </a> 
-    <form class = "ui action input">
-      <input type="hidden" name="sort" id="sort" value="decending">
-      <button type = "submit" class="ui icon button">
-        <i class="angle double down icon"></i>
-      </button>
-    </form>
-
-    <form class = "ui action input">
-      <input type="hidden" name="sort" id="sort" value="acending">
-      <button type = "submit" class="ui icon button">
-        <i class="angle double up icon"></i>
-      </button>
-    </form>
     
     <form class = "ui action input f-right">
       <input type="text" name="search_term" id="search" placeholder="Search Posts">
@@ -56,7 +57,8 @@
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
           </div>
-          <span> user: <%= post.user.username %></span>
+          <span style="margin-left: 10px"> user: <%= post.user.username %></span>
+          <span class="f-right">posted <%= time_ago_in_words(post.created_at)%> ago</span>
         </div>
         <div class="content">
           <div class="header">
@@ -88,13 +90,7 @@
             <% post.comments.each do |comment| %>
               <div class="comment">
                 <div class="content">
-                  <a class="author"><%= comment.author %></a>
-                </div>
-                <div class="metadata">
-                  <span class="date"><%=comment.created_at%></span>
-                </div>
-                <div class="text">
-                  <%= comment.body%>
+                  <a class="author"><%= comment.author %></a> <span class="text" style="margin-left: 10px"> <%= comment.body%></span> <span class="metadata f-right">posted <%= time_ago_in_words(comment.created_at)%> ago</span>
                 </div>
                 <%# REPLY ISN'T FUNCTIONAL ATM %>
                 <%# <div class="actions">
