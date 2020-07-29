@@ -1,90 +1,10 @@
-<%# NOT IN CURRENT USE --> DO NOT DELETE UNTIL POSITIVE IT'S NOT NEEDED %>
 
-
-<%# POST DISPLAY %>
-<%# ICON FOR EDIT - ONLY VISIBLE IF CURRENT USER IS SAME AS POST USER %>
-<%# <i class="edit outline icon"></i> %>
-<div class="ui card">
-  <div class="extra content">
-    <div class="left floated author">
-      <%= image_tag @post.user.profile_photo, class:"ui avatar image max-width" %>  <%= @post.user.email %>
-    </div>
-  </div>
-  <div class="content">
-    <div class="header">
-      <%= @post.title %>
-    </div>
-    <div class="meta">
-      <span class="category">Offering: <%=@post.offer%></span>
-    </div>
-    <div class="description">
-      <p><%= @post.body %></p>
-    </div>
-  </div>
-  
-  <div class = "horizontal-bar">
-    <a class="item" href="/posts/<%=@post.id%>/comments/new" value="<%= new_post_comment_path(@post) %>"> 
-      <button class="ui button">
-        <i class="comment outline icon"></i>
-        Add Comment 
-      </button>
-      
-    </a> 
-    <span class = "comment-count"><%= @post.comments.count%> Comments</span>
-  </div>
-
-
-</div>
-
-<% %>
-
-<%# COMMENT DISPLAY %>
-  <div class="ui comments">
-    <h3 class="ui dividing header">Comments</h3>
-    <%if @post.comments.any? %>
-      
-        <% @post.comments.each do |comment| %>
-          <div class="comment">
-            
-            <div class="content">
-              <a class="author"><%= comment.author %></a>
-            </div>
-            <div class="metadata">
-              <span class="date"><%=comment.created_at%></span>
-            </div>
-            <div class="text">
-              <%= comment.body%>
-            </div>
-            <%# REPLY ISN'T FUNCTIONAL ATM %>
-            <%# <div class="actions">
-              <a class="reply">Reply</a>
-            </div> %>
-          </div>
-        <% end %>
-       </div>
-    <% else %>
-      <p> There are currently no comments to display</p>
-    <% end %>
-    
+<div class = "home-page white">
+    <%= image_tag "BarterUp.png", class: "logo-homepage"%>
    
-    
-   
+    <h2 class="white">OOPS!</h2> 
+    <hr style="margin-right: 300px;">
 
-    <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
-      <%# <form class="ui reply form">
-        <div class="field">
-          <textarea></textarea>
-        </div>
-        <div class="ui button">
-          <i class="icon edit"></i> Add Reply
-        </div>
-      </form> %>
+    <h2 class ="white"> You found our secret page, look at you!</h2>
+    <p>Not a lot going on here, just a pathway to nowhere. Why don't you check out our home page instead?</p>
   </div>
-
-
-<script>
-  $(".ui.comments").hide()
-  $(".comment-count").click(function(){
-    $(".ui.comments").slideToggle();
-  });
-</script>

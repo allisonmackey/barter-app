@@ -27,7 +27,7 @@ TO DO LIST:
 Functionality I want to put in place: 
 - Allow user to sign up with first & last name
 - Allow user to have 'profile' with information about the user
-- Implement 'by zipcode' method so that users can see posts from a mile by radius 
+- Implement 'by zipcode' drop down menu so that users can see posts from other users within a certain radius --> https://www.zipcodeapi.com/API
 - Implement 'friends' capability so that user can add other users and see their 'activity' (STRETCH GOAL)
 - Implement Messaging capability (STRETCH GOAL)
 

@@ -44,15 +44,6 @@ h2.white {
 }
 
 // CUSTOM ID'S
-#home-page {
-  padding: 50px;
-  margin-left: auto;
-  margin-right: auto; 
-  margin-top: 10vh;
-  background-color:#c8543dd1;
-  border-radius: 8px;
-  height: 70vh;
-}
 // #search-bar {
 //   align-items: right;
 //   margin-top: 0px;
@@ -104,7 +95,7 @@ h2.white {
   font-weight: 300;
 }
 
-.hbar { 
+.f-right { 
   float: right;
 }
 
@@ -115,6 +106,15 @@ h2.white {
   width: 70vw;
 }
 
+.home-page {
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 10vh;
+  background-color:#c8543dd1;
+  border-radius: 8px;
+  height: 70vh;
+}
 .logo-homepage {
   width: 25%;
   height: auto;

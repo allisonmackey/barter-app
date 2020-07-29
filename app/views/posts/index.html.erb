@@ -15,7 +15,7 @@
       </button>
     </a> 
   
-    <form class = "ui action input hbar">
+    <form class = "ui action input f-right">
       <input type="text" name="search_term" id="search" placeholder="Search My Posts">
       <button type = "submit" class="ui icon button">
         <i class="search icon"></i>
@@ -30,8 +30,15 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.email %> || <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>">EDIT POST</a> || <a href="/posts/<%=post.id%>" data-method="delete" value="<%= posts_path%>"> DELETE POST </a>
+            user: <%= post.user.username %>
           </div>
+          <div class="ui icon button f-right" data-tooltip="Delete Post" data-variation="mini">
+            <a href="/posts/<%=post.id%>" data-method="delete confirm: {" value="<%= posts_path%>"><i class="trash alternate outline icon"></i></a>
+          </div>
+          <div class="ui icon button f-right" data-tooltip="Edit Post" data-variation="mini">
+              <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>"><i class="edit outline icon"></i></a>
+          </div>
+          
         </div>
         <div class="content">
           <div class="header">
