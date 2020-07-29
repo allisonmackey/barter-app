@@ -10,4 +10,6 @@ class Post < ApplicationRecord
     }
   }
 
+  scope :newest_oldest, -> {( order(created_at: :desc))}
+  scope :oldest_newest, -> {( order(created_at: :asc))}
 end

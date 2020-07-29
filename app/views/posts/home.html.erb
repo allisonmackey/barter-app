@@ -22,13 +22,28 @@
          New Post 
       </button>
     </a> 
-  
+    <form class = "ui action input">
+      <input type="hidden" name="sort" id="sort" value="decending">
+      <button type = "submit" class="ui icon button">
+        <i class="angle double down icon"></i>
+      </button>
+    </form>
+
+    <form class = "ui action input">
+      <input type="hidden" name="sort" id="sort" value="acending">
+      <button type = "submit" class="ui icon button">
+        <i class="angle double up icon"></i>
+      </button>
+    </form>
+    
     <form class = "ui action input f-right">
       <input type="text" name="search_term" id="search" placeholder="Search Posts">
       <button type = "submit" class="ui icon button">
         <i class="search icon"></i>
       </button>
     </form>
+
+
   </div>
 
   <%# POST --> CARD LAYOUT  %>
@@ -40,8 +55,8 @@
             <%# CODE BROKEN AFTER SEEDING - NO 'PROFILE_PHOTO' SEEDED FOR EACH USER%>
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.username %>
           </div>
+          <span> user: <%= post.user.username %></span>
         </div>
         <div class="content">
           <div class="header">
@@ -51,7 +66,7 @@
             <span class="category">Offer: <%=post.offer%></span>
           </div>
           <div class="description">
-            <p></p>
+            <p><%= post.body %></p>
           </div>
         </div>
         <div class = "comment-bar">

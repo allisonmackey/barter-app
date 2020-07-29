@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     end
     if params[:search_term]
       @posts = Post.search_posts(params[:search_term])
+    elsif params[:sort] == "acending"
+      @posts = Post.oldest_newest
+    elsif params[:sort] == "decending"
+      @posts = Post.newest_oldest
     else 
       @posts = Post.all.where("user_id != #{@user}")
     end
