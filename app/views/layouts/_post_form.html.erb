@@ -1,14 +1,13 @@
 <%= render 'layouts/errors', :object => @post %>
 <br>
 <%= form_for @post do |f| %>
-  <%# insert input type for author that will be the current_user's 'username' once that's been implemented %>
-  <%# insert input type for offer 'type' that's a dropdown menu %>
-  <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
   <%# DROP DOWN MENU FOR SERVICE TYPE %>
+  <input type="hidden" name="post[zipcode]" id="post_zipcode" value="<%=current_user.zipcode%>">
+  <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username%>">
   <select class="form-control" name="post[offer_type]" id="post_offer_type">
     <option type="text" value="" name="type[nil]">Select Offer Type</option>
-    <option name="offer_type[goods]" >Goods</option>
-    <option name="offer_type[services]">Services</option>
+    <option name="offer_type[goods]"> Goods </option>
+    <option name="offer_type[services]"> Services </option>
   </select>
   <br>
   <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="Title">
@@ -17,8 +16,7 @@
   <br>
   <input type="text" class ="form-control" name="post[offer]" id="post_offering" placeholder="Enter Offer">
   <br>
-  <input type="zipcode" class ="form-control" name="post[zipcode]" id="post_zipcode" placeholder="Enter Zipcode">
-  <br>
+  <p class = "white"> Posting As: <%=current_user.username%> </p>
   <button type="submit" class="btn" name="commit" value="Create Post" data-disable-with="Create Post">Submit!</button>
 <% end %>
 <br>

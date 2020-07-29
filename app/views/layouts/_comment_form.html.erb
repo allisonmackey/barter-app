@@ -2,17 +2,14 @@
 <br>
 
   <%= form_for [@post, @comment] do |f| %>
+    <p class = "white"> Posting As: <%=current_user.username%> </p>
     <%# insert drop down for icon which will have a 'type' associated with it that users can sort by? %>
-    <%# insert input type for author that will be the current_user's 'username' once that's been implemented %>
     <%# insert input type for offer 'type' that's a dropdown menu %>
-    <%# insert input type for zipcode that will be the current_user's zipcode once that's implemented %>
-    
-    <input type="hidden" name="comment[author]" id="comment_author" value="<%=current_user.email%>">
+    <input type="hidden" name="comment[author]" id="comment_author" value="<%=current_user.username%>">
+    <input type="hidden" name="comment[zipcode]" id="comment_zipcode" placeholder="<%=current_user.zipcode%>">
     <input type="text" class ="form-control" name="comment[body]" id="comment_body" placeholder="Enter Comment">
     <br>
     <input type="text" class ="form-control" name="comment[offer]" id="comment_offering" placeholder="Enter Offer">
-    <br>
-    <input type="zipcode" class ="form-control" name="comment[zipcode]" id="comment_zipcode" placeholder="Enter Zipcode">
     <br>
     <button type="submit" class="btn" name="commit" value="Create Comment" data-disable-with="Create Comment">Submit!</button>
   <% end %>
