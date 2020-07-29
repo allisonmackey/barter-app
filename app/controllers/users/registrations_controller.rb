@@ -17,8 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       current_user.profile_photo.attach(params[:user][:profile_photo])
     end
     current_user
-    binding.pry
-    
   end
 
   # GET /resource/edit

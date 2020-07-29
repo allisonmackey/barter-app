@@ -14,14 +14,45 @@ Comment.destroy_all
 @all_users = User.all
 @all_posts = Post.all
 
-15.times do 
-  user = User.create!(
+5.times do 
+  @user = User.create!(
     email: Faker::Internet.email,
     username: Faker::Internet.username,
     password: Faker::Internet.password, 
     zipcode: Faker::Number.number(digits: 5) 
   )
+  @user.profile_photo.attach(
+    io: File.open('./app/assets/images/avatar1.png'),
+    filename: 'avatar1.png'
+  )
 end
+
+5.times do 
+  @user = User.create!(
+    email: Faker::Internet.email,
+    username: Faker::Internet.username,
+    password: Faker::Internet.password, 
+    zipcode: Faker::Number.number(digits: 5) 
+  )
+  @user.profile_photo.attach(
+    io: File.open('./app/assets/images/avatar2.png'),
+    filename: 'avatar2.png'
+  )
+end
+
+5.times do 
+  @user = User.create!(
+    email: Faker::Internet.email,
+    username: Faker::Internet.username,
+    password: Faker::Internet.password, 
+    zipcode: Faker::Number.number(digits: 5) 
+  )
+  @user.profile_photo.attach(
+    io: File.open('./app/assets/images/avatar3.png'),
+    filename: 'avatar3.png'
+  )
+end
+
 
 
 @all_users.each do |user| 
