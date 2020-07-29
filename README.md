@@ -16,7 +16,6 @@ You can log into the website using the following credentials to browse the appli
 <!-- ENTER USERNAME & PASSWORD HERE AFTER CORRECTLY SEEDING -->
 
 ## Specs 
-
 * As an user I want to be able to create an account and select what kind of services I can provide for bartering
 * As a user I want to be able to see my 'feed' after logging in which will display services/goods being offered by other people for trade.
 * I want to be able to update the services I can provide 

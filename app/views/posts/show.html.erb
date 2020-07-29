@@ -1,10 +1,10 @@
-<%# NOT IN CURRENT USE --> DO NOT DELETE UNTIL POSITIVE IT'S NOT NEEDED %>
+<%# NOT IN CURRENT USE --> DO NOT DELETE UNTIL POSITIVE IT'S NOT NEEDED
 
 
 <%# POST DISPLAY %>
 <%# ICON FOR EDIT - ONLY VISIBLE IF CURRENT USER IS SAME AS POST USER %>
 <%# <i class="edit outline icon"></i> %>
-<div class="ui card">
+<%# <div class="ui card">
   <div class="extra content">
     <div class="left floated author">
       <%= image_tag @post.user.profile_photo, class:"ui avatar image max-width" %>  <%= @post.user.email %>
@@ -65,7 +65,7 @@
     <% else %>
       <p> There are currently no comments to display</p>
     <% end %>
-    
+     %>
    
     
    
@@ -87,4 +87,4 @@
   $(".comment-count").click(function(){
     $(".ui.comments").slideToggle();
   });
-</script>
+</script> %>

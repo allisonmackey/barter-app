@@ -5,7 +5,23 @@
 
 
 <% if current_user %>
-  <h1>Welcome <%= current_user.username %></h1>
+  <h1 class = "header">WELCOME <%= current_user.username.upcase %></h1>
+  
+  <div class = "horizontal-bar">
+    <a class="item" href="/posts/new" value="<%= new_post_path%>"> 
+      <button class="ui button">
+        <i class="plus square outline icon"></i>
+         New Post 
+      </button>
+    </a> 
+  
+    <form class = "ui action input hbar">
+      <input type="text" name="search_term" id="search" placeholder="Search My Posts">
+      <button type = "submit" class="ui icon button">
+        <i class="search icon"></i>
+      </button>
+    </form>
+  </div>
   <%# POST --> CARD LAYOUT  %>
   <%if @posts.any? %>
     <% @posts.each do |post| %>
@@ -14,7 +30,7 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            user: <%= post.user.email %>
+            user: <%= post.user.email %> || <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>">EDIT POST</a> || <a href="/posts/<%=post.id%>" data-method="delete" value="<%= post_path(post)%>"> DELETE POST </a>
           </div>
         </div>
         <div class="content">
@@ -22,7 +38,7 @@
             <%= post.title %>
           </div>
           <div class="meta">
-            <span class="category"><%=post.offer%></span>
+            <span class="category">Offer: <%=post.offer%></span>
           </div>
           <div class="description">
             <p></p>
@@ -37,6 +53,7 @@
           </a> 
           <a><span class = "comment-count"><%= post.comments.count%> Comments</span></a>
         </div>
+        
 
         <%# COMMENT'S DISPLAY  %>
         <%if post.comments.any? %>
@@ -62,6 +79,15 @@
           </div>
         <% end %>
       </div> 
+       <script>
+      $(".ui.comments").hide()
+      $(".comment-count").click(function(){
+        $("#<%=post.id%>").slideToggle();
+      });
+      // $(".comment-count").click(function(){
+      //   $(".ui.comments").hide();
+      // });
+      </script>
     <% end %>
    
     <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
@@ -74,15 +100,7 @@
         </div>
       </form> %>
       
-    <script>
-      $(".ui.comments").hide()
-      $(".comment-count").click(function(){
-        $("#<%=post.id%>").slideToggle();
-      });
-      // $(".comment-count").click(function(){
-      //   $(".ui.comments").hide();
-      // });
-    </script>
+   
   <%else%>
     <p class="white" style="text-align: center;"> You don't currently have any posts. Why not add one? </p>
   <% end %>

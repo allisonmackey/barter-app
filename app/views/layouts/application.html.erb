@@ -38,9 +38,8 @@
           </a>
           <%# RIGHT SIDE MENU %>
         <div class="right menu">
-          
-          <a class="item" href="<%= edit_user_registration_path%>"><%= current_user.username %></a></p>
-          
+          <div class = "item"><%= current_user.username %></div>
+          <a class="item" href="<%= edit_user_registration_path%>"><i class="cog icon"></i></a>
           <a class="ui item" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Log Out</a>
         </div>
         <% else  %>

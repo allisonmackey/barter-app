@@ -15,7 +15,11 @@ class PostsController < ApplicationController
 
   def index 
     @user = current_user
-    @posts = @user.posts
+    if params[:search_term]
+      @posts = Post.search_posts(params[:search_term])
+    else
+      @posts = @user.posts
+    end
   end
 
   def new
@@ -44,7 +48,7 @@ class PostsController < ApplicationController
   end
 
   def show
-   @post = Post.find(params[:id])
+  #  @post = Post.find(params[:id])
   #  binding.pry
   end
 
@@ -58,9 +62,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    render :index
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_path
   end
 
   private 

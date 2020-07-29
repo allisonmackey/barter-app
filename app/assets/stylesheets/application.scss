@@ -53,6 +53,10 @@ h2.white {
   border-radius: 8px;
   height: 70vh;
 }
+// #search-bar {
+//   align-items: right;
+//   margin-top: 0px;
+// }
 
 //  CUSTOM CLASSES 
 .comment-bar {
@@ -70,7 +74,7 @@ h2.white {
 }
 
 .custom-form {
-  margin-top: 25vh;
+  margin-top: 15vh;
   margin-left: auto;
   margin-right: auto;
   padding: 25px;
@@ -93,6 +97,15 @@ h2.white {
 .form-control {
   margin-top: 5px;
   width: 30vw;
+}
+
+.header { 
+  color: #588b8b ;
+  font-weight: 300;
+}
+
+.hbar { 
+  float: right;
 }
 
 .horizontal-bar {
@@ -150,7 +163,7 @@ body > div.container > div > div.ui.card > div.extra.content > div > img {
 }
 
 .ui.button {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 .ui.card {
