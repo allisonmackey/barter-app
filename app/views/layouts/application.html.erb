@@ -11,9 +11,9 @@
   <body>
   
     <%# CONTENT OF TOGGLED SIDEBAR %>
-    <div  class="ui sidebar inverted vertical menu">
+    <%# <div  class="ui left vertical inverted sidebar labeled icon menu">
       <a href="#"class="item">
-        User Settings
+       <i class="cog icon"></i>
       </a>
       <a href="#"class="item">
         
@@ -21,13 +21,13 @@
       <a href="#"class="item">
         
       </a>
-    </div>
+    </div> %>
   
 
     <div class = "ui basic icon top fixed menu">
-      <div id="side-bar" class="item">
+      <%# <div id="side-bar" class="item">
         <i class= "bars icon"></i>
-      </div>
+      </div> %>
         <%# NAVIGATION BAR %>
         <% if current_user %>
           <a class="item" href="/home" value="<%= home_path%>">
@@ -38,9 +38,9 @@
           </a>
           <%# RIGHT SIDE MENU %>
         <div class="right menu">
-          <div class="ui item">
-              <p><%= current_user.username %></p>
-          </div>
+          
+          <a class="item" href="<%= edit_user_registration_path%>"><%= current_user.username %></a></p>
+          
           <a class="ui item" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Log Out</a>
         </div>
         <% else  %>
