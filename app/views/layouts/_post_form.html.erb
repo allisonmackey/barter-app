@@ -4,16 +4,15 @@
   <%# DROP DOWN MENU FOR SERVICE TYPE %>
   <input type="hidden" name="post[zipcode]" id="post_zipcode" value="<%=current_user.zipcode%>">
   <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username%>">
-  
+  <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="What you need..">
+  <br>
+  <input type="text" class ="form-control" name="post[offer]" id="post_offering" placeholder="What you're offering...">
+  <br>
   <select class="form-control" name="post[offer_type]" id="post_offer_type">
     <option type="text" value="" name="type[nil]">Select Offer Type</option>
     <option name="offer_type[goods]"> Goods </option>
     <option name="offer_type[services]"> Services </option>
   </select>
-  <br>
-  <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="What you need..">
-  <br>
-  <input type="text" class ="form-control" name="post[offer]" id="post_offering" placeholder="What you're offering...">
   <br>
   <input type="text" class ="form-control" name="post[body]" id="post_body" placeholder="Any extra details?">
   <br>

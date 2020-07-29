@@ -33,7 +33,7 @@
             user: <%= post.user.username %>
           </div>
           <div class="ui icon button f-right" data-tooltip="Delete Post" data-variation="mini">
-            <a href="/posts/<%=post.id%>" data-method="delete confirm: {" value="<%= posts_path%>"><i class="trash alternate outline icon"></i></a>
+            <a href="/posts/<%=post.id%>" onclick="confirm('Are you sure you want to delete this post?')" data-method="delete" value="<%= posts_path%>"><i class="trash alternate outline icon"></i></a>
           </div>
           <div class="ui icon button f-right" data-tooltip="Edit Post" data-variation="mini">
               <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>"><i class="edit outline icon"></i></a>
