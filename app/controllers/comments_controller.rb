@@ -10,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # will need to refactor to @post.comments.new(comment_params)
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save

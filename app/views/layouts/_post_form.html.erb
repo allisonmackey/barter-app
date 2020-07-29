@@ -12,10 +12,11 @@
   <br>
   <input type="text" class ="form-control" name="post[title]" id="post_title" placeholder="Title">
   <br>
-  <input type="text" class ="form-control" name="post[body]" id="post_body" placeholder="Enter Body">
-  <br>
   <input type="text" class ="form-control" name="post[offer]" id="post_offering" placeholder="Enter Offer">
   <br>
+  <input type="text" class ="form-control" name="post[body]" id="post_body" placeholder="Details">
+  <br>
+
   <p class = "white"> Posting As: <%=current_user.username%> </p>
   <button type="submit" class="btn" name="commit" value="Create Post" data-disable-with="Create Post">Submit!</button>
 <% end %>

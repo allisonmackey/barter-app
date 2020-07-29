@@ -5,12 +5,8 @@
 
 
 <% if current_user %>
-  <h1>Welcome <%= current_user.email %></h1>
-  <%# change to current_user.username once implemented %>
-  <h2>This is your user homepage</h2>
-<% end %>
-
-<%# POST --> CARD LAYOUT  %>
+  <h1>Welcome <%= current_user.username %></h1>
+  <%# POST --> CARD LAYOUT  %>
   <%if @posts.any? %>
     <% @posts.each do |post| %>
       <div class="ui card">
@@ -39,7 +35,6 @@
               Add Comment 
             </button>
           </a> 
-
           <a><span class = "comment-count"><%= post.comments.count%> Comments</span></a>
         </div>
 
@@ -47,7 +42,6 @@
         <%if post.comments.any? %>
           <div class="ui comments" id="<%=post.id%>">
             <h3 class="ui dividing header">Comments</h3>
-            
             <% post.comments.each do |comment| %>
               <div class="comment">
                 <div class="content">
@@ -64,10 +58,12 @@
                   <a class="reply">Reply</a>
                 </div> %>
               </div>
-            <% end %>
+            <%end%>
           </div>
         <% end %>
-    </div>
+      </div> 
+    <% end %>
+   
     <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
       <%# <form class="ui reply form">
         <div class="field">
@@ -87,7 +83,9 @@
       //   $(".ui.comments").hide();
       // });
     </script>
+  <%else%>
+    <p class="white" style="text-align: center;"> You don't currently have any posts. Why not add one? </p>
   <% end %>
-  <% else %>
-    <p> There are currently no posts to display</p>
-  <% end %>
+<% else %>
+  <p> Oops! Look likes you reached this page by mistake, why don't you create an account so you can see this page</p>
+<% end %>

@@ -30,7 +30,8 @@
       <div class="ui card">
         <div class="extra content">
           <div class="left floated author">
-            <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
+            <%# CODE BROKEN AFTER SEEDING - NO 'PROFILE_PHOTO' SEEDED FOR EACH USER%>
+            <%# <%= image_tag post.user.profile_photo, class:"ui avatar image" %>   %>
             <br>
             user: <%= post.user.username %>
           </div>
@@ -104,7 +105,7 @@
     <%end%>
   <% else %>
     <br>
-    <p class="white" style="text-align: center;"> There are currently no posts to display. Why not add one yourself? </p>
+    <p class="white" style="text-align: center;"> There are currently no posts to display. Why don't you add one? </p>
   <% end %>
 <% else %>
   <%# IF USER ISN'T LOGGED IN HOME PAGE/LANDING%>
