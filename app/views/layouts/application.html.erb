@@ -57,11 +57,12 @@
     
     <!-- Site content !-->
       <%# BODY %>
-      <%# <div class="pusher"> %>
+      <%# <div class="pusher"> not working as expected refactor later%>
       
       <div class = "container">
         <% if flash.alert %>
           <div class="ui message">
+            <i class="close icon"></i>
             <div class="header">
               <h2 class = "white"> OOPS!</h2>
             </div>
@@ -77,9 +78,15 @@
 
     
     <script>
-      $('#side-bar').click(function() {
-        $('.ui.sidebar').sidebar('toggle');
+      $('.message .close').on('click', function() {
+        $(this)
+          .closest('.message')
+          .transition('fade')
       })
+
+      // $('#side-bar').click(function() {
+      //   $('.ui.sidebar').sidebar('toggle');
+      // })
     </script>
 
     <footer>BarterUp, 2020 © <a href="https://www.linkedin.com/in/allisonmariemackey/" target="_blank">Allison Mackey</a>
