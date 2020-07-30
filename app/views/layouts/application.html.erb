@@ -58,8 +58,20 @@
     <!-- Site content !-->
       <%# BODY %>
       <%# <div class="pusher"> %>
+      
       <div class = "container">
-          <%= yield %>
+        <% if flash.alert %>
+          <div class="ui message">
+            <div class="header">
+              <h2 class = "white"> OOPS!</h2>
+            </div>
+            <ul>
+              <li class="white"><%= flash.alert %></li>
+            </ul>
+          </div>
+        <% end %>
+       
+        <%= yield %>
       </div>
       <%# </div> %>
 
