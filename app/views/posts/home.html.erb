@@ -13,23 +13,28 @@
     <%end%>
   </div>
 
-  <%# HORIZONTAL BAR UNDER USER INFORMATION %>
-  <%# ADD DROP DOWN FOR SORTING POSTS BY 'TYPE' %>
+
+
+
+  <%# ASCENDING & DECENDING SORTING METHOD ISN'T FUNCTIONING PROPERLY  %>
   <div class = "horizontal-bar">
-    <form id="desc_form" class="ui action input" type="hidden">
-      <input type="hidden" name="sort" id="sort" value="decending">
-    </form>
-    <button type = "submit" class="ui icon button" formtarget="desc_form">
-        <i class="angle double down icon"></i>
-    </button>
+    <%# <form id="desc_form" class="ui action input" type="hidden">
+      <input type="hidden" name="sort" id="sort" value="descending">
+        <button type="submit" class="ui icon button">
+          <i class="angle double down icon"></i>
+      </button>
+    </form> %>
 
-    <form id="asc_form" class = "ui action input" type="hidden">
-      <input type="hidden" name="sort" id="sort" value="acending">
-    </form>
-    <button type = "submit" class="ui icon button" formtarget="asc_form">
+
+    <%# <form class ="ui action input" type="hidden">
+      <input type="hidden" name="sort" id="sort" value="ascending">
+      <button type="submit" class="ui icon button">
         <i class="angle double up icon"></i>
-    </button>
+      </button>
+    </form> %>
 
+    <%# HORIZONTAL BAR UNDER USER INFORMATION %>
+    <%# ADD DROP DOWN FOR SORTING POSTS BY 'TYPE' %>
     <a class="item" href="/posts/new" value="<%= new_post_path%>"> 
       <button class="ui button">
         <i class="plus square outline icon"></i>
@@ -37,9 +42,9 @@
       </button>
     </a> 
     
-    <form class = "ui action input f-right">
+    <form class="ui action input f-right">
       <input type="text" name="search_term" id="search" placeholder="Search Posts">
-      <button type = "submit" class="ui icon button">
+      <button type="submit" class="ui icon button">
         <i class="search icon"></i>
       </button>
     </form>
@@ -101,24 +106,12 @@
           </div>
         <% end %>
       </div>
-      <%# FORM FOR REPLYING --> NOT YET FUNCTIONAL %>
-        <%# <form class="ui reply form">
-          <div class="field">
-            <textarea></textarea>
-          </div>
-          <div class="ui button">
-            <i class="icon edit"></i> Add Reply
-          </div>
-        </form> %>
 
       <script>
         $(".ui.comments").hide()
         $(".comment-count").click(function(){
           $("#<%=post.id%>").slideToggle();
         });
-        // $(".comment-count").click(function(){
-        //   $(".ui.comments").hide();
-        // });
       </script>
     <%end%>
   <% else %>
@@ -141,10 +134,7 @@
     <p>We want people to aquire what they desire, without the need for money!</p>
 
     <h4>QUESTIONS?</h4>
-    <p><a href="mailto:BarterUpApp@gmail.com?&subject=Question!&body=Hi Barter Up People!" target="_blank">Email Me!</a>
-</p>
-
+    <p><a href="mailto:BarterUpApp@gmail.com?&subject=Question!&body=Hi Barter Up People!" target="_blank">Email Me!</a></p>
     <p> Ready to become a user? <a class="white" href="/users/sign_up"> Sign Up!</a>
-
   </div>
 <% end %>

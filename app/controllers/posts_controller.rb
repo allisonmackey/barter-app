@@ -5,16 +5,21 @@ class PostsController < ApplicationController
     if current_user
       @user = current_user.id
     end
+
     if params[:search_term]
       @posts = Post.search_posts(params[:search_term])
-    elsif params[:sort] == "acending"
-      @posts = Post.oldest_newest
-    elsif params[:sort] == "decending"
-      @posts = Post.newest_oldest
-    else 
-      @posts = Post.all.where("user_id != #{@user}")
+    else
+      @posts = Post.all.newest_oldest.where("user_id != #{@user}")
     end
-    # binding.pry
+    # CAUSING SEARCH FUNCTION TO NOT WORK PROPERLY 
+    # if params[:sort] == "ascending"
+    #   @posts = Post.oldest_newest.where("user_id != #{@user}")
+    # elsif params[:sort] == "descending"
+    #   @posts = Post.all.where("user_id != #{@user}")
+    # else
+    #   @posts = Post.all.where("user_id != #{@user}")
+    # end
+    #   
   end
 
   # Accessing Active Storage Records for other users to display profile photos in comments : @image = ActiveStorage::Attachment.where()"@record.user_id = 6" --> allows you to get assignment from active storage... 
@@ -47,8 +52,6 @@ class PostsController < ApplicationController
   end
 
   def show
-  #  @post = Post.find(params[:id])
-  #  binding.pry
   end
 
   def update

@@ -1,11 +1,11 @@
 <%# TO DO LIST %>
 <%# - add 'complete' button which will mark the status as 'closed' %>
-<%# - add 'delete/edit' path so that the user can edit/delete their own posts %>
 <%#  %>
 
 
 <% if current_user %>
-  <h1 class = "header">WELCOME <%= current_user.username.upcase %></h1>
+  <h1 class = "header"><%= image_tag current_user.profile_photo, class:"ui avatar image" %> <%= current_user.username.upcase %>'S POSTS</h1>
+  
   
   <div class = "horizontal-bar">
     <a class="item" href="/posts/new" value="<%= new_post_path%>"> 
@@ -30,15 +30,19 @@
           <div class="left floated author">
             <%= image_tag post.user.profile_photo, class:"ui avatar image" %>  
             <br>
-            <span style="margin-left: 10px">user: <%= post.user.username %></span>
-            <span class="f-right">posted <%= time_ago_in_words(post.created_at)%> ago</span>
           </div>
+          
+          <span style="margin-left: 10px">user: <%= post.user.username %></span>
+        
           <div class="ui icon button f-right" data-tooltip="Delete Post" data-variation="mini">
             <a href="/posts/<%=post.id%>" onclick="confirm('Are you sure you want to delete this post?')" data-method="delete" value="<%= posts_path%>"><i class="trash alternate outline icon"></i></a>
           </div>
+          
           <div class="ui icon button f-right" data-tooltip="Edit Post" data-variation="mini">
               <a href="/posts/<%=post.id%>/edit" value="<%= edit_post_path(post)%>"><i class="edit outline icon"></i></a>
           </div>
+          
+          <span class="f-right" style="margin-right: 15px">posted <%= time_ago_in_words(post.created_at)%> ago</span>
           
         </div>
         <div class="content">
@@ -101,8 +105,6 @@
           <i class="icon edit"></i> Add Reply
         </div>
       </form> %>
-      
-   
   <%else%>
     <p class="white" style="text-align: center;"> You don't currently have any posts. Why not add one? </p>
   <% end %>
