@@ -26,8 +26,7 @@ Or you can create an account of your own!
 * I want to be able to message other users regarding the services/goods they're offering
 * I want to be able to set a time for us to trade goods/services
 
-STRETCH GOALS: 
-Functionality I want to put in place: 
+Future Goals: 
 - Allow user to sign up with first & last name
 - Allow user to have 'profile' with information about the user
 - Implement 'by zipcode' drop down menu so that users can see posts from other users within a certain radius --> https://www.zipcodeapi.com/API
@@ -35,7 +34,6 @@ Functionality I want to put in place:
 - Implement Messaging capability 
 
 ## Technologies Used
-Click on '
 
 * _ActiveRecord_
 * _ActiveStorage_
