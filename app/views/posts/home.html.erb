@@ -53,7 +53,16 @@
   </div>
 
   <%# POST --> CARD LAYOUT  %>
+  <%if @search_params != nil%>
+    <%if @posts.count > 1 || @posts.count === 0 %> 
+      <p class="white" style="text-align: center">Your search for "<%= @search_params %>" returned <%=@posts.count%> results.</p>
+    <%else%>
+      <p class="white" style="text-align: center">Your search for "<%= @search_params %>" returned <%=@posts.count%> result.</p>
+    <% end %>
+  <% end %>
+
   <%if @posts.any? %>
+
     <% @posts.each do |post| %>
       <div class="ui card">
         <div class="extra content">

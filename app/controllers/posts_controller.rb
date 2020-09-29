@@ -7,8 +7,10 @@ class PostsController < ApplicationController
     end
 
     if params[:search_term]
+      @search_params = params[:search_term]
       @posts = Post.search_posts(params[:search_term])
     else
+      @search_params = nil
       @posts = Post.all.newest_oldest.where("user_id != #{@user}")
     end
     # CAUSING SEARCH FUNCTION TO NOT WORK PROPERLY 
