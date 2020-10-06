@@ -7,10 +7,14 @@ A site that will allow users to sign-up and enter profile information. Once sign
 
 View Capstone proposal [here](PROPOSAL.md)
 
-View this project on Heroku [here]()
+<!-- View this project on Heroku [here]() -->
+This Project is not currently deployed due to GCS/Active Storage Issues but you can view my Capstone walkthrough on YouTube:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GULIcls4ZrI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Setup/Installation Requirements
-For detailed instructions for installation click [here](INSTALL.md).
+View detailed instructions for installation [here](INSTALL.md).
 <br>
 You can log into the website using the following credentials to browse the application's functionality:
 Username: AMackey
